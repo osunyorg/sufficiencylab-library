@@ -1,9 +1,9 @@
 theme: osuny
-paginate: 18
 enableRobotsTXT: true
 removePathAccents: true
 params:
+  zotero: '4567622'
   summary:
     position: hero
   search:
-    active: false  
+    active: true

@@ -1,0 +1,30 @@
+{{ $data := dict }}
+{{ $url := printf "https://api.zotero.org/groups/%s/items/" site.Params.zotero }}
+{{ with resources.GetRemote $url }}
+  {{ with .Err }}
+    {{ errorf "Unable to get remote resource %s: %s" $url . }}
+  {{ else }}
+    {{ $data = . | transform.Unmarshal }}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %s" $url }}
+{{ end }}
+
+{{ range $data }}
+  {{ $content := dict "mediaType" "text/markdown" "value" .data.abstractNote }}
+  {{ $params := dict 
+        "authors" .data.creators
+        "doi" .data.DOI
+        "url" .data.url
+        "publication" (dict "issn" .data.ISSN "title" .data.publicationTitle)
+        "tags" .data.tags 
+        }}
+  {{ $page := dict
+    "title" .data.title
+    "path" .data.title
+    "kind" "page"
+    "params" $params
+    "content" $content
+  }}
+  {{ $.AddPage $page }}
+{{ end }}

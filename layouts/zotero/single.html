@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+  {{ partial "events/hero-single.html" . }}
+
+  <div class="document-content">
+    <div class="container">
+      <div>
+        Authors
+        <ul>
+          {{ range .Params.authors }} 
+            <li>{{ .firstName }} {{ .lastName }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <p>
+        Title: {{ .Params.publication.title }}<br>
+        ISSN: {{ .Params.publication.issn }}<br>
+      </p>
+
+      {{ with .GetTerms "tags" }}
+        <p>Tags:</p>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      {{ with .Params.url }}
+        <div>
+          URL 
+          <a href="{{ . }}">{{ . }}</a>
+        </div>
+      {{ end }}
+
+      {{ .Content }}
+    </div>
+
+  </div>
+{{ end }}
