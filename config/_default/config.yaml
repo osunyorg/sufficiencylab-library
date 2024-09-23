@@ -2,7 +2,7 @@ theme: sufficiency-hugo-theme
 enableRobotsTXT: true
 removePathAccents: true
 params:
-  zotero: '4567622'
+  zotero: '5675191'
   summary:
     position: hero
   search:
