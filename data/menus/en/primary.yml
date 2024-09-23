@@ -17,4 +17,8 @@ items:
   target: "/building/"
   kind: page
   children: []
+- title: Agriculture
+  target: "/agriculture/"
+  kind: page
+  children: []
 
