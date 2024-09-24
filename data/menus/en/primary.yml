@@ -10,7 +10,7 @@ items:
   kind: blank
   children:
   - title: Agriculture
-    target: "/agriculture/"
+    target: "/sectors/agriculture/"
     kind: page
     children: []
   - title: Building
