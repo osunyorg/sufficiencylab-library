@@ -5,12 +5,16 @@ items:
   target: "/articles"
   kind: url
   children: []
-- title: Building
-  target: "/building/"
-  kind: page
-  children: []
-- title: Agriculture
-  target: "/agriculture/"
-  kind: page
-  children: []
+- title: Sectors
+  target: ''
+  kind: blank
+  children:
+  - title: Agriculture
+    target: "/agriculture/"
+    kind: page
+    children: []
+  - title: Building
+    target: "/building/"
+    kind: page
+    children: []
 
