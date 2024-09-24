@@ -1,12 +1,12 @@
 ---
 title: Legal
 items:
-- title: Sitemap
-  target: "/sitemap/"
-  kind: page
-  children: []
 - title: Legal terms
   target: https://www.thesufficiencylab.org/legal-terms/
   kind: url
+  children: []
+- title: Sitemap
+  target: "/sitemap/"
+  kind: page
   children: []
 
