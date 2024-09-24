@@ -8,10 +8,5 @@ items:
 - title: Agriculture
   target: "/agriculture/"
   kind: page
-  children:
-  - title: Dietary change in high-income nations alone can lead to substantial double
-      climate dividend
-    target: "/agriculture/dietary-change-in-high-income-nations-alone-can-lead-to-substantial-double-climate-dividend/"
-    kind: page
-    children: []
+  children: []
 
