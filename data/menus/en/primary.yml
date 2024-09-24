@@ -9,4 +9,8 @@ items:
   target: "/agriculture/"
   kind: page
   children: []
+- title: Scientific articles
+  target: "/articles"
+  kind: url
+  children: []
 
