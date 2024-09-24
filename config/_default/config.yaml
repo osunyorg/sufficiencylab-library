@@ -1,11 +1,13 @@
 theme: sufficiency-hugo-theme
 enableRobotsTXT: true
 removePathAccents: true
-taxonomies:
-  zotero_tag: zotero_tags
 params:
   zotero: '5675191'
   summary:
     position: hero
   search:
     active: true
+languages:
+  en:
+    taxonomies:
+      tag: tags

@@ -32,21 +32,35 @@
         "title" .data.publicationTitle
         }}
 
+  // "date": "01/2017"
+  {{ $date :=  
+        (
+          printf "%s-%s-01" 
+          (index (split .data.date "/") 1)
+          (index (split .data.date "/") 0)
+        ) | time 
+        }}
+
   {{ $page := dict
         "title" .data.title
         "path" .data.title
         "kind" "page"
+        "dates" (dict
+          "date" $date
+          )
         "params" (dict 
           "authors" $authors
-          "itemType" .data.itemType
           "doi" .data.DOI
-          "url" .data.url
-          "zotero_tags" $tags
+          "itemType" .data.itemType
           "publication" (dict
             "issn" .data.ISSN 
             "title" .data.publicationTitle
+            "volume" .data.volume
+            "issue" .data.issue
             )
           "rawData" .data
+          "tags" $tags
+          "url" .data.url
           )
         "content" (dict 
           "mediaType" "text/markdown" 

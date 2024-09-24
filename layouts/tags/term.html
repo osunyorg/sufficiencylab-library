@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ partial "events/hero-list.html" . }}
+  <div class="document-content">  
+    <div class="container">
+      {{ partial "events/events.html" . }}
+      {{ partial "commons/pagination.html" . }}
+    </div>
+  </div>
+
+{{ end }}
