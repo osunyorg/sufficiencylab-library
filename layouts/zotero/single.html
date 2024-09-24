@@ -5,21 +5,28 @@
   <div class="document-content">
     <div class="container">
       <div>
-        Authors
+        <p>Authors</p>
         <ul>
           {{ range .Params.authors }} 
-            <li>{{ .firstName }} {{ .lastName }}</li>
+            <li>{{ . }}</li>
           {{ end }}
         </ul>
       </div>
 
-      <p>
-        Title: {{ .Params.publication.title }}<br>
-        ISSN: {{ .Params.publication.issn }}<br>
-      </p>
 
-      {{ with .GetTerms "tags" }}
-        <p>Tags:</p>
+      <p>Publication</p>
+      {{ .Params.publication.title }}<br>
+      {{ .Params.publication.issn }}<br>
+
+      <p>Tags</p>
+      <ul>
+        {{ range .Params.zotero_tags }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+
+      {{ with .GetTerms "zotero_tags" }}
+        <p>Tags (taxo)</p>
         <ul>
           {{ range . }}
             <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
@@ -29,7 +36,7 @@
 
       {{ with .Params.url }}
         <div>
-          URL 
+          <p>URL</p> 
           <a href="{{ . }}">{{ . }}</a>
         </div>
       {{ end }}

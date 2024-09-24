@@ -11,20 +11,48 @@
 {{ end }}
 
 {{ range $data }}
-  {{ $content := dict "mediaType" "text/markdown" "value" .data.abstractNote }}
-  {{ $params := dict 
-        "authors" .data.creators
-        "doi" .data.DOI
-        "url" .data.url
-        "publication" (dict "issn" .data.ISSN "title" .data.publicationTitle)
-        "tags" .data.tags 
+
+  {{ $authors := slice }}
+  {{ range .data.creators }}
+    {{ $authors = $authors | append (printf "%s %s" .firstName .lastName) }}
+  {{ end }}
+
+  {{ $tags := slice }}
+  {{ range .data.tags }}
+    {{ $tags = $tags | append .tag }}
+  {{ end }}
+
+  {{ $content := dict 
+        "mediaType" "text/markdown" 
+        "value" .data.abstractNote 
         }}
+
+  {{ $publication := dict
+        "issn" .data.ISSN 
+        "title" .data.publicationTitle
+        }}
+
   {{ $page := dict
-    "title" .data.title
-    "path" .data.title
-    "kind" "page"
-    "params" $params
-    "content" $content
-  }}
+        "title" .data.title
+        "path" .data.title
+        "kind" "page"
+        "params" (dict 
+          "authors" $authors
+          "itemType" .data.itemType
+          "doi" .data.DOI
+          "url" .data.url
+          "zotero_tags" $tags
+          "publication" (dict
+            "issn" .data.ISSN 
+            "title" .data.publicationTitle
+            )
+          "rawData" .data
+          )
+        "content" (dict 
+          "mediaType" "text/markdown" 
+          "value" .data.abstractNote
+          )
+        }}
+
   {{ $.AddPage $page }}
 {{ end }}
