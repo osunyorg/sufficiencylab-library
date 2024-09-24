@@ -1,6 +1,10 @@
 ---
 title: Main menu
 items:
+- title: Scientific articles
+  target: "/articles"
+  kind: url
+  children: []
 - title: Building
   target: "/building/"
   kind: page
@@ -8,9 +12,5 @@ items:
 - title: Agriculture
   target: "/agriculture/"
   kind: page
-  children: []
-- title: Scientific articles
-  target: "/articles"
-  kind: url
   children: []
 
