@@ -14,7 +14,7 @@ items:
     kind: page
     children: []
   - title: Building
-    target: "/building/"
+    target: "/sectors/building/"
     kind: page
     children: []
 
