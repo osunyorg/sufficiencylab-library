@@ -2,7 +2,9 @@ theme: sufficiency-hugo-theme
 enableRobotsTXT: true
 removePathAccents: true
 params:
-  zotero: '5675191'
+  zotero: 
+    group: '5675191'
+    collection: '53VFAINU'
   summary:
     position: hero
   search:

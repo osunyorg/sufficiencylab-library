@@ -1,5 +1,5 @@
 {{ $data := dict }}
-{{ $url := printf "https://api.zotero.org/groups/%s/items/" site.Params.zotero }}
+{{ $url := printf "https://api.zotero.org/groups/%s/collections/%s/items/" site.Params.zotero.group site.Params.zotero.collection }}
 {{ with resources.GetRemote $url }}
   {{ with .Err }}
     {{ errorf "Unable to get remote resource %s: %s" $url . }}
