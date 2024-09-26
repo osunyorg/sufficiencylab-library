@@ -11,6 +11,9 @@
 {{ end }}
 
 {{ range $data }}
+  {{ if not .data.title }}
+    {{ continue }}
+  {{ end }}
 
   {{ $authors := slice }}
   {{ range .data.creators }}
@@ -32,7 +35,6 @@
         "title" .data.publicationTitle
         }}
 
-  // "date": "01/2017"
   {{ $date := "" }}
   {{ with .data.date }}
     {{ $date =  (printf "%s-%s-01" (index (split . "/") 1) (index (split . "/") 0)) | time }}
