@@ -33,13 +33,10 @@
         }}
 
   // "date": "01/2017"
-  {{ $date :=  
-        (
-          printf "%s-%s-01" 
-          (index (split .data.date "/") 1)
-          (index (split .data.date "/") 0)
-        ) | time 
-        }}
+  {{ $date := "" }}
+  {{ with .data.date }}
+    {{ $date =  (printf "%s-%s-01" (index (split . "/") 1) (index (split . "/") 0)) | time }}
+  {{ end }} 
 
   {{ $page := dict
         "title" .data.title
