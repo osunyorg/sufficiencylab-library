@@ -249,6 +249,7 @@ Is there a closed list of types?
 - 2015-2050
 - Not identified
 - 1996-2018
+
 Data management: this is not a taxonomy, it must be text.
 
 ### Cost of policy intervention
