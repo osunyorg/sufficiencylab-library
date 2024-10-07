@@ -1,4 +1,8 @@
 ---
 title: Ecosystem
-items: []
+items:
+- title: Lab
+  target: https://www.thesufficiencylab.org
+  kind: url
+  children: []
 
