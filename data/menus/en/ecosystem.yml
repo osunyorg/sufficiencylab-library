@@ -5,4 +5,8 @@ items:
   target: https://www.thesufficiencylab.org
   kind: url
   children: []
+- title: Library
+  target: ''
+  kind: blank
+  children: []
 
