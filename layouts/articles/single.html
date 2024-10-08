@@ -1,11 +1,13 @@
 {{ define "main" }}
 
-  {{ partial "events/hero-single.html" . }}
+  {{ partial "posts/hero-single.html" . }}
 
   <div class="document-content">
     <div class="container">
-      {{ .Date }}
-      {{ .Params.date }}
+      <div class="abstract">
+        {{ .Content }}
+      </div>
+      {{ .Date.Format "January 2006" }}
       <div>
         <p>Authors</p>
         <ul>
@@ -38,8 +40,6 @@
         </div>
       {{ end }}
 
-      {{ . }}
-      {{ .Content }}
     </div>
 
   </div>

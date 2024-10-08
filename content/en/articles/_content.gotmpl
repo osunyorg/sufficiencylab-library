@@ -1,5 +1,9 @@
 {{ $data := dict }}
-{{ $url := printf "https://api.zotero.org/groups/%s/collections/%s/items/" site.Params.zotero.group site.Params.zotero.collection }}
+{{ $nocache := math.Rand }}
+{{ $url := printf "https://api.zotero.org/groups/%s/collections/%s/items/?%s"
+                  site.Params.zotero.group 
+                  site.Params.zotero.collection
+                  $nocache }}
 {{ with resources.GetRemote $url }}
   {{ with .Err }}
     {{ errorf "Unable to get remote resource %s: %s" $url . }}
@@ -61,10 +65,7 @@
           "tags" $tags
           "url" .data.url
           )
-        "content" (dict 
-          "mediaType" "text/markdown" 
-          "value" .data.abstractNote
-          )
+        "content" $content
         }}
 
   {{ $.AddPage $page }}
