@@ -5,7 +5,7 @@ items:
   target: "/sectors/"
   kind: page
   children:
-  - title: Agriculture
+  - title: Nutrition
     target: "/sectors/nutrition/"
     kind: page
     children: []
