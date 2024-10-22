@@ -5,9 +5,9 @@ items:
   target: "/articles"
   kind: url
   children: []
-- title: Sectors
-  target: ''
-  kind: blank
+- title: Publication by end-uses
+  target: "/sectors/"
+  kind: page
   children:
   - title: Agriculture
     target: "/sectors/agriculture/"
