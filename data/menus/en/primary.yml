@@ -1,10 +1,6 @@
 ---
 title: Main menu
 items:
-- title: Scientific articles
-  target: "/articles"
-  kind: url
-  children: []
 - title: Publication by end-uses
   target: "/sectors/"
   kind: page
@@ -17,4 +13,8 @@ items:
     target: "/sectors/building/"
     kind: page
     children: []
+- title: Scientific articles
+  target: "/articles"
+  kind: url
+  children: []
 
