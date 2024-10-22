@@ -13,7 +13,7 @@ items:
     target: "/sectors/building/"
     kind: page
     children: []
-- title: Scientific articles
+- title: All scientific publications
   target: "/articles"
   kind: url
   children: []
