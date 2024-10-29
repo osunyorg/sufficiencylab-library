@@ -9,7 +9,7 @@ items:
     target: "/sectors/nutrition/"
     kind: page
     children: []
-  - title: Building
+  - title: Shelter and living conditions
     target: "/sectors/building/"
     kind: page
     children: []
