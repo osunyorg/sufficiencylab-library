@@ -21,4 +21,8 @@ items:
   target: "/framework/"
   kind: page
   children: []
+- title: Hygiene
+  target: "/sectors/hygiene/"
+  kind: page
+  children: []
 
