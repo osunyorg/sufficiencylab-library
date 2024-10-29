@@ -17,10 +17,10 @@ items:
     target: "/sectors/hygiene/"
     kind: page
     children: []
-- title: Clothing
-  target: "/sectors/clothing/"
-  kind: page
-  children: []
+  - title: Clothing
+    target: "/sectors/clothing/"
+    kind: page
+    children: []
 - title: All scientific publications
   target: "/articles"
   kind: url
