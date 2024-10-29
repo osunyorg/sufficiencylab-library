@@ -33,6 +33,10 @@ items:
     target: "/sectors/communication-and-information/"
     kind: page
     children: []
+  - title: Mobility
+    target: "/sectors/mobility/"
+    kind: page
+    children: []
 - title: All scientific publications
   target: "/articles"
   kind: url
