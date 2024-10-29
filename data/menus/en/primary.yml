@@ -25,6 +25,10 @@ items:
     target: "/sectors/healthcare/"
     kind: page
     children: []
+  - title: Education
+    target: "/sectors/education/"
+    kind: page
+    children: []
 - title: All scientific publications
   target: "/articles"
   kind: url
