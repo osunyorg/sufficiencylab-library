@@ -13,16 +13,16 @@ items:
     target: "/sectors/building/"
     kind: page
     children: []
+  - title: Hygiene
+    target: "/sectors/hygiene/"
+    kind: page
+    children: []
 - title: All scientific publications
   target: "/articles"
   kind: url
   children: []
 - title: Framework
   target: "/framework/"
-  kind: page
-  children: []
-- title: Hygiene
-  target: "/sectors/hygiene/"
   kind: page
   children: []
 
