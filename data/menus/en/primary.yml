@@ -25,4 +25,8 @@ items:
   target: "/framework/"
   kind: page
   children: []
+- title: Clothing
+  target: "/sectors/clothing/"
+  kind: page
+  children: []
 
