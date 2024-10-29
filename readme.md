@@ -112,32 +112,70 @@ Zotero `data.DOI`, `data.url`
 - 10.1016/j.enbuild.2022.112590, https://linkinghub.elsevier.com/retrieve/pii/S0378778822007617
 - 10.1016/j.trd.2016.05.012, https://linkinghub.elsevier.com/retrieve/pii/S1361920916303030
 
+### Human needs
+
+Zotero na
+
+- Nutrition
+- Shelter and living conditions
+- Hygiene
+- Clothing
+- Healthcare
+- Education
+- Communication and information
+- Mobility
+
 ### Scientific discipline
 
 Zotero na
 
-- Building energy policies
-- Transport energy policy
-- Energy policy 
-- Agriculture
-
-Data management: this is going to be a problem, as there is no international consistency.
-Transport energy policy is not a discipline in France (https://conseil-national-des-universites.fr/cnu/).
-Do we have a list?
+- Anthropology
+- Criminology
+- Geography
+- Economics
+- Education sciences
+- Linguistics
+- Military science
+- Management science
+- Organization studies
+- Political science
+- Public health
+- Psychology
+- Religious studies
+- Sociology
+- Biology
+- Earth science
+- Chemistry
+- Physics
+- Astronomy
+- Materials science
+- Logic 
+- Mathematics
+- Statistics
+- Systems science
+- Data science
+- Information science
+- Computer science
+- Cryptography
 
 ### Geographical scope
 
 Zotero na
 
-- France
-- United States
-- United Kingdom
-- Germany
-- 54 High income countries
-- World
+- Global
+- Countries
+- Large regions
+- Small regions
+- Local areas
 
-Data management: this is usable only as a text, therefore not browsable. 
-If it is intended to be used as a browsable or filterable data, it must be lists of countries, and "54 countries" must list them all.
+### Regional Group
+
+- World
+- African States
+- Asia-Pacific States
+- Eastern European States
+- Latin American and Caribbean States
+- Western European and other States
 
 ### What sufficiency mentioned in the paper
 
@@ -152,42 +190,139 @@ Data management: why do we answer by "yes" or "no" to a question starting with "
 
 Zotero tag `sec_*`, or Zotero subcollections
 
-- Building
-- Transport 
-- Agriculture
-- Fashion
-
-Data management: we need to choose.
+- Agriculture, forestry and fishing
+- Mining and quarrying
+- Manufacturing
+- Electricity, gas, steam and air conditioning supply
+- Water supply; sewerage, waste management and remediation activities
+- Construction
+- Wholesale and retail trade; repair of motor vehicles and motorcycles
+- Transportation and storage
+- Accommodation and food service activities
+- Information and communication
+- Financial and insurance activities
+- Real estate activities
+- Professional, scientific and technical activities
+- Administrative and support service activities
+- Public administration and defence; compulsory social security
+- Education
+- Human health and social work activities
+- Arts, entertainment and recreation
+- Other service activities
+- Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use
+- Activities of extraterritorial organizations and bodies
 
 ### Sub-sector
 
 Zotero tag `sub_*`, or Zotero subcollections
 
-- Residential buildings
-- Mobility of individuals
-- Food production 
-- Clothing
-
-Data management: we need to choose.
+- Crop and animal production, hunting and related service activities
+- Forestry and logging
+- Fishing and aquaculture
+- Mining of coal and lignite
+- Extraction of crude petroleum and natural gas
+- Mining of metal ores
+- Other mining and quarrying
+- Mining support service activities
+- Manufacture of food products
+- Manufacture of beverages
+- Manufacture of tobacco products
+- Manufacture of wearing apparel
+- Manufacture of leather and related products
+- Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials
+- Manufacture of paper and paper products
+- Printing and reproduction of recorded media
+- Manufacture of coke and refined petroleum products
+- Manufacture of chemicals and chemical products
+- Manufacture of pharmaceuticals, medicinal chemical and botanical products
+- Manufacture of rubber and plastics products
+- Manufacture of other non-metallic mineral products
+- Manufacture of basic metals
+- Manufacture of fabricated metal products, except machinery and equipment
+- Manufacture of optical instruments and photographic equipment
+- Manufacture of electrical equipment
+- Manufacture of machinery and equipment n.e.c.
+- Manufacture of motor vehicles, trailers and semi-trailers
+- Manufacture of other transport equipment
+- Manufacture of furniture
+- Other manufacturing
+- Repair and installation of machinery and equipment
+- Electricity, gas, steam and air conditioning supply
+- Water collection, treatment and supply
+- Sewerage
+- Waste collection, treatment and disposal activities; materials recovery
+- Remediation activities and other waste management services
+- Construction of buildings
+- Civil engineering
+- Specialized construction activities
+- Wholesale and retail trade and repair of motor vehicles and motorcycles
+- Wholesale trade, except of motor vehicles and motorcycles
+- Retail trade, except of motor vehicles and motorcycles
+- Land transport and transport via pipelines
+- Water transport
+- Air transport
+- Warehousing and support activities for transportation
+- Postal and courier activities
+- Accommodation
+- Food and beverage service activities
+- Publishing activities
+- Motion picture, video and television programme production, sound recording and music publishing activities
+- Programming and broadcasting activities
+- Telecommunications
+- Computer programming, consultancy and related activities
+- Information service activities
+- Financial service activities, except insurance and pension funding
+- Insurance, reinsurance and pension funding, except compulsory social security
+- Activities auxiliary to financial service and insurance activities
+- Real estate activities
+- Legal and accounting activities
+- Activities of head offices; management consultancy activities
+- Architectural and engineering activities; technical testing and analysis
+- Scientific research and development
+- Advertising and market research
+- Other professional, scientific and technical activities
+- Veterinary activities
+- Rental and leasing activities
+- Employment activities
+- Travel agency, tour operator, reservation service and related activities
+- Security and investigation activities
+- Services to buildings and landscape activities
+- Office administrative, office support and other business support activities
+- Public administration and defence; compulsory social security
+- Education
+- Human health activities
+- Residential care activities
+- Social work activities without accommodation
+- Creative, arts and entertainment activities
+- Libraries, archives, museums and other cultural activities
+- Gambling and betting activities
+- Activities of membership organizations
+- Repair of computers and personal and household goods
+- Other personal service activities
+- Activities of households as employers of domestic personnel
+- Undifferentiated goods- and services-producing activities of private households for own use
 
 ### Policy area
 
-Zotero tag `pol_*`
-
-- Not identified
-- Environment, Transport
-- Energy policy
-- Housing policy
-- Transport policy 
-- Energy Policy
-- Agriculture policies
-- Climate policies
-- Health policies
-- Land use policies
-
-Data management: the taxonomy needs consistency.
-It's not possible to have a policy named "Environment, Transport", it's 2.
-It's not possible to have sometimes "policy", sometimes "Policy", sometimes "policies".
+Zotero tag na
+ 
+- Jobs
+- Social Rights
+- Economy
+- Agriculture
+- Cohesion 
+- Reforms
+- Health 
+- Food 
+- Justice
+- Equality
+- Home Affairs
+- Energy
+- Financial services, financial stability and Capital Markets 
+- Innovation and Research
+- Culture
+- Education and Youth
+- Climate Action
 
 ### Policy instrument
 
@@ -269,36 +404,55 @@ No example. What is it?
 
 ### Natural resources impacted
 
-- Energy 
-- Materials
-- Land
-- Land use
+Zotero na
 
-Data management: needs consistency. 
-Do we have a closed list?
+- Freshwater
+- Marine Resources
+- Wetlands
+- Metals and Ores
+- Non-Metallic Minerals
+- Fossil Fuels
+- Agricultural Land
+- Forests
+- Urban Land
+- Biomass
 
 ### Wellbeing (type and impact)
 
-- Not identified
-- Social benefits
-- Health benefits
-- Costs savings
+Zotero na
 
-Data management: needs consistency. 
-Do we have a closed list?
+Housing
+Jobs
+Education
+Civic Engagement
+Life Satisfaction
+Work-Life Balance
+Income
+Community
+Environment
+Health
+Safety
 
-### Equity consideration
+### Justice
 
-- Not identified
-- Cycling is unbalanced and largely a consequence of highly educated people in cities who now cycle twice as much 
-- Equal per capita CDR responsibilities
+Zotero na
 
-Data management: this is not a taxonomy, it must be text.
+- Distributional
+- Procedural
+- Corrective
+- Recognitional
+- Transitional
 
 ### Planetary boundaries impacted
 
-- Land use
-- Climate change
+Zotero na
 
-Data management: needs consistency. 
-Do we have a closed list?
+- Land-System Change
+- Climate Change
+- Biosphere Integrity
+- Biogeochemical Flows
+- Ocean Acidification
+- Freshwater Use
+- Atmospheric Aerosol Loading
+- Ozone Depletion
+- Introduction of Novel Entities
