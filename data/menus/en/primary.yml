@@ -2,39 +2,39 @@
 title: Main menu
 items:
 - title: Publications by human needs
-  target: "/sector/"
+  target: "/publications-by-human-needs/"
   kind: page
   children:
   - title: Nutrition
-    target: "/sector/nutrition/"
+    target: "/publications-by-human-needs/nutrition/"
     kind: page
     children: []
   - title: Shelter and living conditions
-    target: "/sector/building/"
+    target: "/publications-by-human-needs/building/"
     kind: page
     children: []
   - title: Hygiene
-    target: "/sector/hygiene/"
+    target: "/publications-by-human-needs/hygiene/"
     kind: page
     children: []
   - title: Clothing
-    target: "/sector/clothing/"
+    target: "/publications-by-human-needs/clothing/"
     kind: page
     children: []
   - title: Healthcare
-    target: "/sector/healthcare/"
+    target: "/publications-by-human-needs/healthcare/"
     kind: page
     children: []
   - title: Education
-    target: "/sector/education/"
+    target: "/publications-by-human-needs/education/"
     kind: page
     children: []
   - title: Communication and information
-    target: "/sector/communication-and-information/"
+    target: "/publications-by-human-needs/communication-and-information/"
     kind: page
     children: []
   - title: Mobility
-    target: "/sector/mobility/"
+    target: "/publications-by-human-needs/mobility/"
     kind: page
     children: []
 - title: All scientific publications
