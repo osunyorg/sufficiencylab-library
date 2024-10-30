@@ -4,194 +4,233 @@
 
   <div class="document-content">
     <div class="container">
-      <div>
-        <h2>Lead author</h2>
-        {{ with .Params.leadAuthor.name }}
-          Name<br>
-          {{ . }}<br>
+
+      <h2>Context and quantification</h2>
+
+      <div class="sf__columns">
+        {{ with .GetTerms "sub-sectors" }}
+          <div class="sf__field">
+            <p class="sf__label">
+              <a href="/sub-sectors">Sub-sectors</a>
+            </p>
+            <ul class="sf__taxonomy">
+              {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
         {{ end }}
-        {{ with .Params.leadAuthor.gender }}
-          Gender<br>
-          {{ . }}<br>
+        {{ with .GetTerms "scientific-disciplines" }}
+          <div class="sf__field">
+            <p class="sf__label">
+              <a href="/scientific-disciplines">Scientific disciplines</a>
+            </p>
+            <ul class="sf__taxonomy">
+              {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
         {{ end }}
-        {{ with .Params.leadAuthor.institution.name }}
-          Institution<br>
-          {{ . }}<br>
-        {{ end }}
-        {{ with .Params.leadAuthor.institution.location }}
-          Institution location<br>
-          {{ . }}
+        {{ with .Params.timeline }}
+          <div class="sf__field">
+            <p class="sf__label">Timeline</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
         {{ end }}
       </div>
 
-      <h2>Meta</h2>
-      Peer reviewed ?<br>
-      {{ .Params.meta.peerReviewed }}<br>
-
-      Grey literature ?<br>
-      {{ .Params.meta.greyLiterature }}<br>
-
-      {{ with .Params.meta.typeOfPaper }}
-        Type of paper<br>
-        {{ . }}<br>
+      {{ with .Params.type.results }}
+        <div class="sf__field">
+          <p class="sf__label">Quantification results</p>
+          <p class="sf__value">{{ . }}</p>
+        </div>
       {{ end }}
-
-      {{ with .Params.meta.volume }}
-        Volume<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .Date}}
-        Publication date<br>
-        {{ .Format "January 2006" }}<br>
-      {{ end }}
-
-      {{ with .Params.url }}
-        URL<br>
-        <a href="{{ . }}">{{ . }}</a><br>
-      {{ end }}
-
-      <h2>Analysis</h2>
-
-      Sufficiency mentioned ?<br>
-      {{ .Params.sufficiencyMentioned }}<br>
-
-      {{ with .GetTerms "scientific-disciplines" }}
-      <a href="/scientific-disciplines">Scientific disciplines</a><br>
-        <ul>
-          {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
-
-      {{ with .GetTerms "geographical-scopes" }}
-        <a href="/geographical-scopes">Geographical scope</a><br>
-        <ul>
-          {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
-
-      {{ with .GetTerms "human-needs" }}
-        <a href="/human-needs">Human needs</a><br>
-        <ul>
-          {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
-
-      {{ with .GetTerms "sub-sectors" }}
-        <a href="/sub-sectors">Sub-sectors</a><br>
-        <ul>
-          {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
-
-      <h2>Policy</h2>
-
-      {{ with .Params.policy.area }}
-        Area<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .Params.policy.instrument }}
-        Instrument<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .Params.policy.measure }}
-        Measure<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .Params.policy.intervention }}
-        Intervention<br>
-        {{ . }}<br>
-      {{ end }}
-
-      <h2>Quantification</h2>
 
       {{ with .Params.quantification.type }}
-        Type<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .Params.type.results }}
-        Results<br>
-        {{ . }}<br>
+        <div class="sf__field">
+          <p class="sf__label">Quantification type</p>
+          <p class="sf__value">{{ . }}</p>
+        </div>
       {{ end }}
 
       {{ with .Params.type.gaps }}
-        Gaps<br>
-        {{ . }}<br>
+        <div class="sf__field">
+          <p class="sf__label">Quantification gaps</p>
+          <p class="sf__value">{{ . }}</p>
+        </div>
       {{ end }}
 
-      {{ with .Params.timeline }}
-        Timeline<br>
-        {{ . }}<br>
-      {{ end }}
+      <h2>About the policy</h2>
 
-      <h2>Policy intervention</h2>
+      <div class="sf__columns">
+        {{ with .Params.policy.area }}
+          <div class="sf__field">
+            <p class="sf__label">Area</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.policy.instrument }}
+          <div class="sf__field">
+            <p class="sf__label">Instrument</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.policy.measure }}
+          <div class="sf__field">
+            <p class="sf__label">Measure</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.policy.intervention }}
+          <div class="sf__field">
+            <p class="sf__label">Intervention</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.policyIntervention.cost }}
+          <div class="sf__field">
+            <p class="sf__label">Cost</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.policyIntervention.funding }}
+          <div class="sf__field">
+            <p class="sf__label">Funding</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.institutionalArrangement }}
+          <div class="sf__field">
+            <p class="sf__label">Institutional arrangement</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+      </div>
 
-      {{ with .Params.policyIntervention.cost }}
-        Costs<br>
-        {{ . }}<br>
-      {{ end }}
+      <h2>Impacts</h2>
 
-      {{ with .Params.policyIntervention.funding }}
-        Funding<br>
-        {{ . }}<br>
-      {{ end }}
+      <div class="sf__columns">
+        {{ with .GetTerms "planetary-boundaries-impacted" }}
+          <div class="sf__field">
+            <p class="sf__label">
+              <a href="/planetary-boundaries-impacted">Planetary boundaries impacted</a>
+            </p>
+            <ul class="sf__taxonomy">
+              {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+        {{ with .GetTerms "geographical-scopes" }}
+          <div class="sf__field">
+            <p class="sf__label">
+              <a href="/geographical-scopes">Geographical scope</a>
+            </p>
+            <ul class="sf__taxonomy">
+              {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+        {{ with .GetTerms "human-needs" }}
+          <div class="sf__field">
+            <p class="sf__label"><a href="/human-needs">Human needs</a></p>
+            <ul class="sf__taxonomy">
+              {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+        {{ with .GetTerms "natural-resources-impacted" }}
+          <div class="sf__field">
+            <p class="sf__label">
+              <a href="/natural-resources-impacted">Natural resources impacted</a>
+            </p>
+            <ul class="sf__taxonomy">
+              {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+        {{ with .Params.stakeholders.involved }}
+          <div class="sf__field">
+            <p class="sf__label">Stakeholders involved</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.stakeholders.impacted }}
+          <div class="sf__field">
+            <p class="sf__label">Stakeholders impacted</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.wellbeing }}
+          <div class="sf__field">
+            <p class="sf__label">Wellbeing</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.equity }}
+          <div class="sf__field">
+            <p class="sf__label">Equity</p>
+            <p class="sf__value">{{ . }}</p>
+          </div>
+        {{ end }}
+      </div>
 
-      {{ with .Params.institutionalArrangement }}
-        Institutional arrangement<br>
-        {{ . }}<br>
-      {{ end }}
+      <h2>Metadata</h2>
 
-      <h2>Stakeholders</h2>
-
-      {{ with .Params.stakeholders.involved }}
-        Involved<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .Params.stakeholders.impacted }}
-        Impacted<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .GetTerms "natural-resources-impacted" }}
-        <a href="/natural-resources-impacted">Natural resources impacted</a><br>
-        <ul>
-          {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
-
-      {{ with .Params.wellbeing }}
-        Wellbeing<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .Params.equity }}
-        Equity<br>
-        {{ . }}<br>
-      {{ end }}
-
-      {{ with .GetTerms "planetary-boundaries-impacted" }}
-        <a href="/planetary-boundaries-impacted">Planetary boundaries impacted</a><br>
-        <ul>
-          {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
+      <table>
+        <tr>
+          <th>Lead author name</th>
+          <td>{{ .Params.leadAuthor.name }}</td>
+        </tr>
+        <tr>
+          <th>Lead author gender</th>
+          <td>{{ .Params.leadAuthor.gender | default "-" }}</td>
+        </tr>
+        <tr>
+          <th>Lead author institution</th>
+          <td>{{ .Params.leadAuthor.institution.name }}</td>
+        </tr>
+        <tr>
+          <th>Lead author institution location</th>
+          <td>{{ .Params.leadAuthor.institution.location }}</td>
+        </tr>
+        <tr>
+          <th>Peer reviewed?</th>
+          <td>{{ .Params.meta.peerReviewed }}</td>
+        </tr>
+        <tr>
+          <th>Grey literature?</th>
+          <td>{{ .Params.meta.greyLiterature }}</td>
+        </tr>
+        <tr>
+          <th>Type of paper</th>
+          <td>{{ .Params.meta.typeOfPaper }}</td>
+        </tr>
+        <tr>
+          <th>Volume</th>
+          <td>{{ .Params.meta.volume }}</td>
+        </tr>
+        <tr>
+          <th>Publication date</th>
+          <td>{{ .Date.Format "January 2006"}}</td>
+        </tr>
+        <tr>
+          <th>URL / DOI</th>
+          <td><a href="{{ .Params.url }}">{{ .Params.url }}</a></td>
+        </tr>
+        <tr>
+          <th>Sufficiency mentioned?</th>
+          <td>{{ .Params.sufficiencyMentioned }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 {{ end }}

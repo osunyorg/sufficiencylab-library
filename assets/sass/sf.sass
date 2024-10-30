@@ -1,0 +1,32 @@
+.articles__page
+    h2
+        margin-top: $spacing-5
+        margin-bottom: $spacing-3
+    .sf
+        &__label
+            @include small
+            color: $color-text-alt
+            text-transform: uppercase
+            a
+                text-decoration: none
+                @include icon(arrow-right-line, after, true)
+        &__value
+            margin: 0
+        &__taxonomy
+            list-style: none
+            margin-top: $spacing-1
+            li
+                display: inline-block
+                a
+                    @include small
+                    border: 1px solid $color-border
+                    border-radius: 50px
+                    padding: $spacing-1 $spacing-3
+                    text-decoration: none
+                    &:hover
+                        background: $color-text
+                        color: $color-background
+        &__columns
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: var(--grid-gutter) var(--grid-gutter)
