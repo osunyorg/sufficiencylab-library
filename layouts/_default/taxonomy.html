@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ partial "events/hero-list.html" . }}
+  <div class="document-content">  
+    <div class="container">
+      {{ range .Data.Terms.Alphabetical }}
+        <h2><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})</h2>
+      {{ end }}
+    </div>
+  </div>
+
+{{ end }}

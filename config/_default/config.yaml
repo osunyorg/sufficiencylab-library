@@ -2,9 +2,6 @@ theme: sufficiency-hugo-theme
 enableRobotsTXT: true
 removePathAccents: true
 params:
-  zotero: 
-    group: '5675191'
-    collection: '53VFAINU'
   summary:
     position: hero
   search:
@@ -12,4 +9,5 @@ params:
 languages:
   en:
     taxonomies:
-      tag: tags
+      geographical-scope: geographical-scopes
+      scientific-discipline: scientific-disciplines

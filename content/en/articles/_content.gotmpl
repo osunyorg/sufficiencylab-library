@@ -1,72 +1,134 @@
-{{ $data := dict }}
-{{ $nocache := math.Rand }}
-{{ $url := printf "https://api.zotero.org/groups/%s/collections/%s/items/?%s"
-                  site.Params.zotero.group 
-                  site.Params.zotero.collection
-                  $nocache }}
-{{ with resources.GetRemote $url }}
-  {{ with .Err }}
-    {{ errorf "Unable to get remote resource %s: %s" $url . }}
-  {{ else }}
-    {{ $data = . | transform.Unmarshal }}
-  {{ end }}
-{{ else }}
-  {{ errorf "Unable to get remote resource %s" $url }}
-{{ end }}
+{{ with $file := "sufficiency-framework.csv" }}
+  {{ with resources.Get $file }}
+    {{ with . | transform.Unmarshal }}
+      {{ range after 1 . }}
 
-{{ range $data }}
-  {{ if not .data.title }}
-    {{ continue }}
-  {{ end }}
+        Extracting data
 
-  {{ $authors := slice }}
-  {{ range .data.creators }}
-    {{ $authors = $authors | append (printf "%s %s" .firstName .lastName) }}
-  {{ end }}
+        {{ $title := index . 0 }}
+        {{ $lead_author := index . 1 }}
+        {{ $lead_author_gender := index . 2 }}
+        {{ $lead_author_institution := index . 3 }}
+        {{ $lead_author_institution_location := index . 4 }}
+        {{ $peer_reviewed := eq (index . 5) "Yes" }}
+        {{ $grey_literature := eq (index . 6) "Yes" }}
+        {{ $type_of_paper := index . 7 }}
+        {{ $publication_date := index . 8 }}
+        {{ $publisher := index . 9 }}
+        {{ $volume := index . 10 }}
+        {{ $publication_url := index . 11 }}
+        {{ $scientific_discipline := index . 12 }}
+        {{ $geographical_scope := index . 13 }}
+        {{ $sufficiency_mentioned := eq (index . 14) "Yes" }}
+        {{ $human_needs := index . 15 }}
+        {{ $sub_sector := index . 16 }}
+        {{ $policy_area := index . 17 }}
+        {{ $policy_instrument := index . 18 }}
+        {{ $policy_measure := index . 19 }}
+        {{ $policy_intervention := index . 20 }}
+        {{ $quantification_type := index . 21 }}
+        {{ $quantification_results := index . 22 }}
+        {{ $quantification_gaps := index . 23 }}
+        {{ $timeline := index . 24 }}
+        {{ $policy_intervention_cost := index . 25 }}
+        {{ $policy_intervention_funding := index . 26 }}
+        {{ $institutional_arrangement := index . 27 }}
+        {{ $stakeholders_involved := index . 28 }}
+        {{ $stakeholders_impacted := index . 29 }}
+        {{ $natural_resources_impacted := index . 30 }}
+        {{ $wellbeing := index . 31 }}
+        {{ $equity := index . 32 }}
+        {{ $planetary_boundaries := index . 33 }}
 
-  {{ $tags := slice }}
-  {{ range .data.tags }}
-    {{ $tags = $tags | append .tag }}
-  {{ end }}
+        Analyzing
 
-  {{ $content := dict 
-        "mediaType" "text/markdown" 
-        "value" .data.abstractNote 
-        }}
+        {{ if eq (len $publication_date) 4 }}
+          2016
+          {{ $publication_date = printf "%s-01-01" $publication_date }}
+        {{ else if gt (len $publication_date) 4 }}
+          10 January 2021
+          {{ $parts := split $publication_date " " }}
+          {{ range last 1 $parts }}
+            {{ $publication_date = printf "%s-01-01" . }}
+          {{ end }}
+        {{ else }}
+          {{ errorf "Problem with date %s" $publication_date }}
+        {{ end }}
+        {{ $dates := dict }}
+        {{ with $publication_date }}
+          {{ $date := time.AsTime . }}
+          {{ $dates = dict "date" $date }}
+        {{ end }}
 
-  {{ $publication := dict
-        "issn" .data.ISSN 
-        "title" .data.publicationTitle
-        }}
+        {{ $scientific_discipline_tags := slice }}
+        {{ range (split $scientific_discipline "/") }}
+          {{ $scientific_discipline_tags = $scientific_discipline_tags | append (strings.TrimSpace .) }}
+        {{ end }}
 
-  {{ $date := "" }}
-  {{ with .data.date }}
-    {{ $date =  (printf "%s-%s-01" (index (split . "/") 1) (index (split . "/") 0)) | time }}
-  {{ end }} 
+        {{ $geographical_scope_tags := slice }}
+        {{ range (split $geographical_scope "/") }}
+          {{ $geographical_scope_tags = $geographical_scope_tags | append (strings.TrimSpace .) }}
+        {{ end }}
 
-  {{ $page := dict
-        "title" .data.title
-        "path" .data.title
-        "kind" "page"
-        "dates" (dict
-          "date" $date
-          )
-        "params" (dict 
-          "authors" $authors
-          "doi" .data.DOI
-          "itemType" .data.itemType
-          "publication" (dict
-            "issn" .data.ISSN 
-            "title" .data.publicationTitle
-            "volume" .data.volume
-            "issue" .data.issue
+        Rendering
+
+        {{ $page := (dict
+            "title" $title
+            "path" $title
+            "kind" "page"
+            "dates" $dates
+            "params" (dict
+              "leadAuthor" (dict 
+                "name" $lead_author
+                "gender" $lead_author_gender
+                "institution" (dict
+                  "name" $lead_author_institution
+                  "location" $lead_author_institution_location
+                )
+              )
+              "meta" (dict
+                "peerReviewed" $peer_reviewed
+                "greyLiterature" $grey_literature
+                "typeOfPaper" $type_of_paper
+                "publisher" $publisher
+                "volume" $volume
+              )
+              "url" $publication_url
+              "scientific-disciplines" $scientific_discipline_tags
+              "geographical-scopes" $geographical_scope_tags
+              "sufficiencyMentioned" $sufficiency_mentioned
+              "human-needs" $human_needs
+              "sub-sector" $sub_sector
+              "policy" (dict
+                "area" $policy_area
+                "instrument" $policy_instrument
+                "measure" $policy_measure
+                "intervention" $policy_intervention
+              )
+              "quantification" (dict
+                "type" $quantification_type
+                "results" $quantification_results
+                "gaps" $quantification_gaps
+              )
+              "timeline" $timeline
+              "policy-intervention" (dict
+                "cost" $policy_intervention_cost
+                "funding" $policy_intervention_funding
+              )
+              "institutional-arrangement" $institutional_arrangement
+              "stakholders" (dict
+                "involved" $stakeholders_involved
+                "impacted" $stakeholders_impacted
+              )
+              "natural-resources-impacted" $natural_resources_impacted
+              "wellbeing" $wellbeing
+              "equity" $equity
+              "planetary-boundaries" $planetary_boundaries
+              "data" .
             )
-          "rawData" .data
-          "tags" $tags
-          "url" .data.url
-          )
-        "content" $content
-        }}
-
-  {{ $.AddPage $page }}
+          )}}
+        {{ $.AddPage $page }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}

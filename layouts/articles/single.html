@@ -4,28 +4,60 @@
 
   <div class="document-content">
     <div class="container">
-      <div class="abstract">
-        {{ .Content }}
-      </div>
-      {{ .Date.Format "January 2006" }}
       <div>
-        <p>Authors</p>
-        <ul>
-          {{ range .Params.authors }} 
-            <li>{{ . }}</li>
-          {{ end }}
-        </ul>
+        <h2>Lead author</h2>
+        {{ with .Params.leadAuthor.name }}
+          Name<br>
+          {{ . }}<br>
+        {{ end }}
+        {{ with .Params.leadAuthor.gender }}
+          Gender<br>
+          {{ . }}<br>
+        {{ end }}
+        {{ with .Params.leadAuthor.institution.name }}
+          Institution<br>
+          {{ . }}<br>
+        {{ end }}
+        {{ with .Params.leadAuthor.institution.location }}
+          Institution location<br>
+          {{ . }}
+        {{ end }}
       </div>
 
+      <h2>Meta</h2>
+      Peer reviewed ?<br>
+      {{ .Params.meta.peerReviewed }}<br>
 
-      <p>Publication</p>
-      {{ .Params.publication.title }}<br>
-      {{ .Params.publication.volume }}<br>
-      {{ .Params.publication.issue }}<br>
-      {{ .Params.publication.issn }}<br>
+      Grey literature ?<br>
+      {{ .Params.meta.greyLiterature }}<br>
 
-      {{ with .GetTerms "tags" }}
-        <p>Tags (taxo)</p>
+      {{ with .Params.meta.typeOfPaper }}
+        Type of paper<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.meta.volume }}
+        Volume<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Date}}
+        Publication date<br>
+        {{ .Format "January 2006" }}<br>
+      {{ end }}
+
+      {{ with .Params.url }}
+        URL<br>
+        <a href="{{ . }}">{{ . }}</a><br>
+      {{ end }}
+
+      <h2>Analysis</h2>
+
+      Sufficiency mentioned ?<br>
+      {{ .Params.sufficiencyMentioned }}<br>
+
+      {{ with .GetTerms "scientific-disciplines" }}
+        Scientific disciplines<br>
         <ul>
           {{ range . }}
             <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
@@ -33,12 +65,24 @@
         </ul>
       {{ end }}
 
-      {{ with .Params.url }}
-        <div>
-          <p>URL</p> 
-          <a href="{{ . }}">{{ . }}</a>
-        </div>
+      {{ with .GetTerms "geographical-scopes" }}
+        Geographical scope<br>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
       {{ end }}
+
+      <div class="small">
+        CSV
+        <p>{{ .Params.data }}</p>
+      </div>
+
+      <div class="small">
+        Params
+        <p>{{ .Params }}</p>
+      </div>
 
     </div>
 
