@@ -10,7 +10,7 @@
         )}}
 
         {{- if .code }}
-          {{ if hasPrefix .code "zotero" }}
+          {{ if hasPrefix .code "sufficiency-framework" }}
             {{ partial "articles/embed.html" .code }}
           {{ else }}
             {{ partial "PrepareHTML" .code }}

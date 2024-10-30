@@ -1,7 +1,8 @@
-{{ $tags := split (replace . "zotero " "") " " }}
-{{ range $tags }}
-  {{ $tag := site.GetPage (printf "/tags/%s" .) }}
-  {{ with $tag }}
-    {{ partial "events/events.html" $tag }}
-  {{ end }}
+{{ $term := replace . "sufficiency-framework " "" }}
+{{ with site.GetPage $term }}
+  <div class="articles articles--list">
+    {{range .Pages }}
+      {{ partial "articles/article.html" . }}
+    {{ end }}
+  </div>
 {{ end }}
