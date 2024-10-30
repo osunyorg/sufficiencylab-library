@@ -70,6 +70,26 @@
           {{ $geographical_scope_tags = $geographical_scope_tags | append (strings.TrimSpace .) }}
         {{ end }}
 
+        {{ $human_needs_tags := slice }}
+        {{ range (split $human_needs ",") }}
+          {{ $human_needs_tags = $human_needs_tags | append (strings.TrimSpace .) }}
+        {{ end }}
+
+        {{ $sub_sector_tags := slice }}
+        {{ range (split $sub_sector ",") }}
+          {{ $sub_sector_tags = $sub_sector_tags | append (strings.TrimSpace .) }}
+        {{ end }}
+
+        {{ $natural_resources_impacted_tags := slice }}
+        {{ range (split $natural_resources_impacted ",") }}
+          {{ $natural_resources_impacted_tags = $natural_resources_impacted_tags | append (strings.TrimSpace .) }}
+        {{ end }}
+
+        {{ $planetary_boundaries_tags := slice }}
+        {{ range (split $planetary_boundaries ",") }}
+          {{ $planetary_boundaries_tags = $planetary_boundaries_tags | append (strings.TrimSpace .) }}
+        {{ end }}
+
         Rendering
 
         {{ $page := (dict
@@ -94,11 +114,11 @@
                 "volume" $volume
               )
               "url" $publication_url
+              "sufficiencyMentioned" $sufficiency_mentioned
               "scientific-disciplines" $scientific_discipline_tags
               "geographical-scopes" $geographical_scope_tags
-              "sufficiencyMentioned" $sufficiency_mentioned
-              "human-needs" $human_needs
-              "sub-sector" $sub_sector
+              "human-needs" $human_needs_tags
+              "sub-sectors" $sub_sector_tags
               "policy" (dict
                 "area" $policy_area
                 "instrument" $policy_instrument
@@ -111,19 +131,19 @@
                 "gaps" $quantification_gaps
               )
               "timeline" $timeline
-              "policy-intervention" (dict
+              "policyIntervention" (dict
                 "cost" $policy_intervention_cost
                 "funding" $policy_intervention_funding
               )
-              "institutional-arrangement" $institutional_arrangement
-              "stakholders" (dict
+              "institutionalArrangement" $institutional_arrangement
+              "stakeholders" (dict
                 "involved" $stakeholders_involved
                 "impacted" $stakeholders_impacted
               )
-              "natural-resources-impacted" $natural_resources_impacted
+              "natural-resources-impacted" $natural_resources_impacted_tags
               "wellbeing" $wellbeing
               "equity" $equity
-              "planetary-boundaries" $planetary_boundaries
+              "planetary-boundaries-impacted" $planetary_boundaries
               "data" .
             )
           )}}

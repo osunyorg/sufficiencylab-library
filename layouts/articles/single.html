@@ -57,7 +57,7 @@
       {{ .Params.sufficiencyMentioned }}<br>
 
       {{ with .GetTerms "scientific-disciplines" }}
-        Scientific disciplines<br>
+      <a href="/scientific-disciplines">Scientific disciplines</a><br>
         <ul>
           {{ range . }}
             <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
@@ -66,7 +66,7 @@
       {{ end }}
 
       {{ with .GetTerms "geographical-scopes" }}
-        Geographical scope<br>
+        <a href="/geographical-scopes">Geographical scope</a><br>
         <ul>
           {{ range . }}
             <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
@@ -74,17 +74,124 @@
         </ul>
       {{ end }}
 
-      <div class="small">
-        CSV
-        <p>{{ .Params.data }}</p>
-      </div>
+      {{ with .GetTerms "human-needs" }}
+        <a href="/human-needs">Human needs</a><br>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
 
-      <div class="small">
-        Params
-        <p>{{ .Params }}</p>
-      </div>
+      {{ with .GetTerms "sub-sectors" }}
+        <a href="/sub-sectors">Sub-sectors</a><br>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
 
+      <h2>Policy</h2>
+
+      {{ with .Params.policy.area }}
+        Area<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.policy.instrument }}
+        Instrument<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.policy.measure }}
+        Measure<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.policy.intervention }}
+        Intervention<br>
+        {{ . }}<br>
+      {{ end }}
+
+      <h2>Quantification</h2>
+
+      {{ with .Params.quantification.type }}
+        Type<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.type.results }}
+        Results<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.type.gaps }}
+        Gaps<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.timeline }}
+        Timeline<br>
+        {{ . }}<br>
+      {{ end }}
+
+      <h2>Policy intervention</h2>
+
+      {{ with .Params.policyIntervention.cost }}
+        Costs<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.policyIntervention.funding }}
+        Funding<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.institutionalArrangement }}
+        Institutional arrangement<br>
+        {{ . }}<br>
+      {{ end }}
+
+      <h2>Stakeholders</h2>
+
+      {{ with .Params.stakeholders.involved }}
+        Involved<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.stakeholders.impacted }}
+        Impacted<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .GetTerms "natural-resources-impacted" }}
+        <a href="/natural-resources-impacted">Natural resources impacted</a><br>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      {{ with .Params.wellbeing }}
+        Wellbeing<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .Params.equity }}
+        Equity<br>
+        {{ . }}<br>
+      {{ end }}
+
+      {{ with .GetTerms "planetary-boundaries-impacted" }}
+        <a href="/planetary-boundaries-impacted">Planetary boundaries impacted</a><br>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
     </div>
-
   </div>
 {{ end }}

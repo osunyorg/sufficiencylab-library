@@ -10,4 +10,8 @@ languages:
   en:
     taxonomies:
       geographical-scope: geographical-scopes
+      human-need: human-needs
+      natural-resource-impacted: natural-resources-impacted
+      planetary-boundary-impacted: planetary-boundaries-impacted
       scientific-discipline: scientific-disciplines
+      sub-sector: sub-sectors
