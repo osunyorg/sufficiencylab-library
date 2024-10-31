@@ -17,8 +17,8 @@
             color: $color-text-alt
             text-transform: uppercase
             a
-                text-decoration: none
                 @include icon(arrow-right-line, after, true)
+                text-decoration: none
         &__value
             margin: 0
         &__taxonomy
@@ -39,7 +39,26 @@
                         background: $color-text
                         color: $color-background
         &__columns
-            display: grid
-            grid-template-columns: repeat(3, 1fr)
-            grid-gap: var(--grid-gutter) var(--grid-gutter)
-            margin-bottom: $spacing-4
+            div
+                margin-bottom: $spacing-3
+
+            @include media-breakpoint-up(desktop)
+                display: grid
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: var(--grid-gutter) var(--grid-gutter)
+    table
+        @include media-breakpoint-down(desktop)
+            tr
+                display: block
+            td,
+            th
+                display: block
+                border: none
+            th
+                @include small
+                color: $color-text-alt
+                padding-bottom: 0
+                text-transform: uppercase
+            td
+                padding-top: 0
+                word-break: break-all

@@ -4,6 +4,13 @@
 
 This project is tested with BrowserStack.
 
+## Coding
+
+```bash
+env GOOGLE_API_KEY="xxx" hugo server
+```
+https://gohugo.io/functions/os/getenv/
+https://dev.to/anastasiia_xfr/hugo-how-use-variables-from-env-3k1i
 
 ## Sufficiency framework
 
