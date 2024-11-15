@@ -25,7 +25,3 @@ security:
   funcs:
     getenv:
       - GOOGLE_API_KEY
-development:
-  targets:
-    - name: "production"
-      URL: "s3://library.thesufficiencylab.org?endpoint=garage.deuxfleurs.fr&s3ForcePathStyle=true&region=garage&awssdk=v1"

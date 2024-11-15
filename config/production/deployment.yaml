@@ -1,0 +1,10 @@
+matchers:
+  - pattern: "^.+\\.(woff2|woff|svg|ttf|otf|eot|js|css)$"
+    cacheControl: "max-age=31536000, no-transform, public"
+    gzip: true
+  - pattern: "^.+\\.(png|jpg|jpeg|gif|webp)$"
+    cacheControl: "max-age=31536000, no-transform, public"
+    gzip: false
+targets:
+  - name: "production"
+    URL: "s3://library.thesufficiencylab.org?endpoint=garage.deuxfleurs.fr&s3ForcePathStyle=true&region=garage&awssdk=v1"
