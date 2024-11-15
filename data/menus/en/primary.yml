@@ -5,6 +5,10 @@ items:
   target: "/publications-by-human-needs/"
   kind: page
   children:
+  - title: Communication and information
+    target: "/publications-by-human-needs/communication-and-information/"
+    kind: page
+    children: []
   - title: Nutrition
     target: "/publications-by-human-needs/nutrition/"
     kind: page
@@ -27,10 +31,6 @@ items:
     children: []
   - title: Education
     target: "/publications-by-human-needs/education/"
-    kind: page
-    children: []
-  - title: Communication and information
-    target: "/publications-by-human-needs/communication-and-information/"
     kind: page
     children: []
   - title: Mobility
