@@ -24,4 +24,4 @@ languages:
 security:
   funcs:
     getenv:
-      GOOGLE_API_KEY
+      - GOOGLE_API_KEY
