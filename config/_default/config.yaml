@@ -14,6 +14,8 @@ params:
     active: true
 languages:
   en:
+    permalinks:
+      articles: "/articles/:year/:slug"
     taxonomies:
       geographical-scope: geographical-scopes
       human-need: human-needs
