@@ -41,7 +41,7 @@ items:
   target: "/articles"
   kind: url
   children: []
-- title: Framework
+- title: About the framework
   target: "/framework/"
   kind: page
   children: []
