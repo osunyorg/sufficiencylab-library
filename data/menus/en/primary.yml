@@ -9,10 +9,6 @@ items:
     target: "/publications-by-human-needs/communication-and-information/"
     kind: page
     children: []
-  - title: Shelter and living conditions
-    target: "/publications-by-human-needs/shelter/"
-    kind: page
-    children: []
   - title: Healthcare
     target: "/publications-by-human-needs/healthcare/"
     kind: page
@@ -31,6 +27,10 @@ items:
     children: []
   - title: Nutrition
     target: "/publications-by-human-needs/nutrition/"
+    kind: page
+    children: []
+  - title: Shelter and living conditions
+    target: "/publications-by-human-needs/shelter/"
     kind: page
     children: []
   - title: Mobility
