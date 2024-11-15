@@ -1,7 +1,7 @@
 ---
 title: Upper menu
 items:
-- title: Lab
+- title: Home
   target: https://www.thesufficiencylab.org
   kind: url
   children: []
