@@ -6,7 +6,7 @@ items:
   kind: url
   children: []
 - title: Library
-  target: ''
-  kind: blank
+  target: "/"
+  kind: page
   children: []
 
