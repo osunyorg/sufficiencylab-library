@@ -1,59 +1,52 @@
-{{ with $file := "sufficiency-framework.csv" }}
-  {{ with resources.Get $file }}
-    {{ with . | transform.Unmarshal }}
+{{ $url := printf "https://sheets.googleapis.com/v4/spreadsheets/%s/values/%s?key=%s" site.Params.google.spreadsheet site.Params.google.sheet (getenv "GOOGLE_API_KEY") }}
+{{ with $url }}
+  {{ with resources.GetRemote $url | transform.Unmarshal }}
+    {{ with .values }}
       {{ range after 1 . }}
 
         Extracting data
 
         {{ $title := index . 0 }}
-        {{ $lead_author := index . 1 }}
-        {{ $lead_author_gender := index . 2 }}
-        {{ $lead_author_institution := index . 3 }}
-        {{ $lead_author_institution_location := index . 4 }}
-        {{ $peer_reviewed := eq (index . 5) "Yes" }}
-        {{ $grey_literature := eq (index . 6) "Yes" }}
-        {{ $type_of_paper := index . 7 }}
-        {{ $publication_date := index . 8 }}
-        {{ $publisher := index . 9 }}
-        {{ $volume := index . 10 }}
-        {{ $publication_url := index . 11 }}
-        {{ $scientific_discipline := index . 12 }}
-        {{ $geographical_scope := index . 13 }}
-        {{ $sufficiency_mentioned := eq (index . 14) "Yes" }}
-        {{ $human_needs := index . 15 }}
-        {{ $sub_sector := index . 16 }}
-        {{ $policy_area := index . 17 }}
-        {{ $policy_instrument := index . 18 }}
-        {{ $policy_measure := index . 19 }}
-        {{ $policy_intervention := index . 20 }}
-        {{ $quantification_type := index . 21 }}
-        {{ $quantification_results := index . 22 }}
-        {{ $quantification_gaps := index . 23 }}
-        {{ $timeline := index . 24 }}
-        {{ $policy_intervention_cost := index . 25 }}
-        {{ $policy_intervention_funding := index . 26 }}
-        {{ $institutional_arrangement := index . 27 }}
-        {{ $stakeholders_involved := index . 28 }}
-        {{ $stakeholders_impacted := index . 29 }}
-        {{ $natural_resources_impacted := index . 30 }}
-        {{ $wellbeing := index . 31 }}
-        {{ $equity := index . 32 }}
-        {{ $planetary_boundaries := index . 33 }}
+        {{ $abstract := index . 1 }}
+        {{ $lead_author := index . 2 }}
+        {{ $lead_author_gender := index . 3 }}
+        {{ $lead_author_institution := index . 4 }}
+        {{ $lead_author_institution_location := index . 5 }}
+        {{ $peer_reviewed := eq (index . 6) "Yes" }}
+        {{ $grey_literature := eq (index . 7) "Yes" }}
+        {{ $type_of_paper := index . 8 }}
+        {{ $publication_year := index . 9 }}
+        {{ $publisher := index . 10 }}
+        {{ $editor := index . 11 }}
+        {{ $volume := index . 12 }}
+        {{ $publication_url := index . 13 }}
+        {{ $scientific_discipline := index . 14 }}
+        {{ $regional_group := index . 15 }}
+        {{ $countries_studied := index . 16 }}
+        {{ $geographical_scope := index . 17 }}
+        {{ $sufficiency_mentioned := eq (index . 18) "Yes" }}
+        {{ $human_needs := index . 19 }}
+        {{ $sectors := index . 20 }}
+        {{ $policy_area := index . 21 }}
+        {{ $policy_instrument := index . 22 }}
+        {{ $policy_intervention := index . 23 }}
+        {{ $quantification_methodology := index . 24 }}
+        {{ $quantification_results := index . 25 }}
+        {{ $quantification_gaps := index . 26 }}
+        {{ $timeline := index . 27 }}
+        {{ $policy_intervention_cost := index . 28 }}
+        {{ $policy_intervention_funding := index . 29 }}
+        {{ $institutional_arrangement := index . 30 }}
+        {{ $stakeholders_involved := index . 31 }}
+        {{ $stakeholders_impacted := index . 32 }}
+        {{ $natural_resources_impacted := index . 33 }}
+        {{ $wellbeing := index . 34 }}
+        {{ $justice := index . 35 }}
+        {{ $planetary_boundaries := index . 36 }}
 
         Analyzing
 
-        {{ if eq (len $publication_date) 4 }}
-          2016
-          {{ $publication_date = printf "%s-01-01" $publication_date }}
-        {{ else if gt (len $publication_date) 4 }}
-          10 January 2021
-          {{ $parts := split $publication_date " " }}
-          {{ range last 1 $parts }}
-            {{ $publication_date = printf "%s-01-01" . }}
-          {{ end }}
-        {{ else }}
-          {{ errorf "Problem with date %s" $publication_date }}
-        {{ end }}
+        {{ $publication_date := printf "%s-01-01" $publication_year }}
         {{ $dates := dict }}
         {{ with $publication_date }}
           {{ $date := time.AsTime . }}
@@ -61,23 +54,23 @@
         {{ end }}
 
         {{ $scientific_discipline_tags := slice }}
-        {{ range (split $scientific_discipline "/") }}
+        {{ range (split $scientific_discipline ", ") }}
           {{ $scientific_discipline_tags = $scientific_discipline_tags | append (strings.TrimSpace .) }}
         {{ end }}
 
         {{ $geographical_scope_tags := slice }}
-        {{ range (split $geographical_scope "/") }}
+        {{ range (split $geographical_scope ", ") }}
           {{ $geographical_scope_tags = $geographical_scope_tags | append (strings.TrimSpace .) }}
         {{ end }}
 
         {{ $human_needs_tags := slice }}
-        {{ range (split $human_needs ",") }}
+        {{ range (split $human_needs ", ") }}
           {{ $human_needs_tags = $human_needs_tags | append (strings.TrimSpace .) }}
         {{ end }}
 
-        {{ $sub_sector_tags := slice }}
-        {{ range (split $sub_sector ",") }}
-          {{ $sub_sector_tags = $sub_sector_tags | append (strings.TrimSpace .) }}
+        {{ $sectors_tags := slice }}
+        {{ range (split $sectors ", ") }}
+          {{ $sectors_tags = $sectors_tags | append (strings.TrimSpace .) }}
         {{ end }}
 
         {{ $natural_resources_impacted_tags := slice }}
@@ -98,6 +91,7 @@
             "kind" "page"
             "dates" $dates
             "params" (dict
+              "abstract" $abstract
               "leadAuthor" (dict 
                 "name" $lead_author
                 "gender" $lead_author_gender
@@ -118,15 +112,14 @@
               "scientific-disciplines" $scientific_discipline_tags
               "geographical-scopes" $geographical_scope_tags
               "human-needs" $human_needs_tags
-              "sub-sectors" $sub_sector_tags
+              "sectors" $sectors_tags
               "policy" (dict
                 "area" $policy_area
                 "instrument" $policy_instrument
-                "measure" $policy_measure
                 "intervention" $policy_intervention
               )
               "quantification" (dict
-                "type" $quantification_type
+                "methodology" $quantification_methodology
                 "results" $quantification_results
                 "gaps" $quantification_gaps
               )
@@ -142,7 +135,7 @@
               )
               "natural-resources-impacted" $natural_resources_impacted_tags
               "wellbeing" $wellbeing
-              "equity" $equity
+              "justice" $justice
               "planetary-boundaries-impacted" $planetary_boundaries
               "data" .
             )

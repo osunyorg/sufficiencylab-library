@@ -1,0 +1,8 @@
+<div class="articles articles--list">
+  {{ if not .Pages }}
+    <p>No article</p>
+  {{ end }}
+  {{ range .Paginator.Pages }}
+    {{ partial "articles/article.html" . }}
+  {{ end }}
+</div>

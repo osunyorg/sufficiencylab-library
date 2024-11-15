@@ -5,13 +5,17 @@
   <div class="document-content">
     <div class="container">
 
+      <p class="sf__abstract">
+        {{ .Params.abstract }}
+      </p>
+
       <h2>Context and quantification</h2>
 
       <div class="sf__columns">
-        {{ with .GetTerms "sub-sectors" }}
+        {{ with .GetTerms "sectors" }}
           <div class="sf__field">
             <p class="sf__label">
-              <a href="/sub-sectors">Sub-sectors</a>
+              <a href="/sectors">Sectors</a>
             </p>
             <ul class="sf__taxonomy">
               {{ range . }}
@@ -175,9 +179,9 @@
             <p class="sf__value">{{ . }}</p>
           </div>
         {{ end }}
-        {{ with .Params.equity }}
+        {{ with .Params.justice }}
           <div class="sf__field">
-            <p class="sf__label">Equity</p>
+            <p class="sf__label">Justice consideration</p>
             <p class="sf__value">{{ . }}</p>
           </div>
         {{ end }}
@@ -219,8 +223,8 @@
           <td>{{ .Params.meta.volume }}</td>
         </tr>
         <tr>
-          <th>Publication date</th>
-          <td>{{ .Date.Format "January 2006"}}</td>
+          <th>Publication year</th>
+          <td>{{ .Date.Format "2006" }}</td>
         </tr>
         <tr>
           <th>URL / DOI</th>

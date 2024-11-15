@@ -1,4 +1,6 @@
-# Osuny
+# Sufficiency library
+
+Fabriqué avec Osuny
 
 [Documentation officielle sur developers.osuny.org](https://developers.osuny.org)
 
@@ -18,8 +20,6 @@ https://dev.to/anastasiia_xfr/hugo-how-use-variables-from-env-3k1i
 
 Paper's title.
 
-Zotero: `data.title`
-
 - Introducing sufficiency in the building sector in net-zero scenarios for France
 - Carsharing’s life-cycle impacts on energy use and greenhouse gas emissions
 - All about size? – The potential of downsizing in reducing energy demand
@@ -31,8 +31,6 @@ Zotero: `data.title`
 
 Lead author is the first author.
 
-Zotero `data.creators[0].firstName`, `data.creators[0].lastName`
-
 - Albane Gaspard
 - T. Donna Chen
 - Gesche M. Huebner
@@ -42,14 +40,10 @@ Zotero `data.creators[0].firstName`, `data.creators[0].lastName`
 
 ### Gender of lead author	
 
-Zotero NA
-
 - Female
 - Male
 
 ### Lead authors' institution	
-
-Zotero NA
 
 - ADEME
 - University of Virginia
@@ -58,8 +52,6 @@ Zotero NA
 - Leiden University
 
 ### Lead author's institution location
-
-Zotero NA
  
 - France
 - United States
@@ -69,28 +61,20 @@ Zotero NA
 
 ### Peer-reviewed	
 
-Zotero NA
-
 - Yes
 - No
 
 ### Grey literature	
-
-Zotero NA
 
 - Yes
 - No
 
 ### Type of paper
 
-Zotero NA
-
 - Analytical
 - Conceptual 
 
 ### Publication date
-
-Zotero `data.date`
 
 - 1 January 2023
 - 18 June 2016
@@ -98,15 +82,11 @@ Zotero `data.date`
 
 ### Publisher/Journal
 
-Zotero `data.publicationTitle`
-
 - Energy and Buildings
 - Transportation Research Part D: Transport and Environment
 - Applied Energy
 
 ### Volume
-
-Zotero `data.volume`
 
 - 278
 - 47
@@ -114,14 +94,10 @@ Zotero `data.volume`
 
 ### Publication URL/DOI
 
-Zotero `data.DOI`, `data.url`
-
 - 10.1016/j.enbuild.2022.112590, https://linkinghub.elsevier.com/retrieve/pii/S0378778822007617
 - 10.1016/j.trd.2016.05.012, https://linkinghub.elsevier.com/retrieve/pii/S1361920916303030
 
 ### Human needs
-
-Zotero na
 
 - Nutrition
 - Shelter and living conditions
@@ -133,8 +109,6 @@ Zotero na
 - Mobility
 
 ### Scientific discipline
-
-Zotero na
 
 - Anthropology
 - Criminology
@@ -167,8 +141,6 @@ Zotero na
 
 ### Geographical scope
 
-Zotero na
-
 - Global
 - Countries
 - Large regions
@@ -186,16 +158,12 @@ Zotero na
 
 ### What sufficiency mentioned in the paper
 
-Zotero na
-
 - Yes
 - No
 
 Data management: why do we answer by "yes" or "no" to a question starting with "what"?
 
 ### Sector
-
-Zotero tag `sec_*`, or Zotero subcollections
 
 - Agriculture, forestry and fishing
 - Mining and quarrying
@@ -220,8 +188,6 @@ Zotero tag `sec_*`, or Zotero subcollections
 - Activities of extraterritorial organizations and bodies
 
 ### Sub-sector
-
-Zotero tag `sub_*`, or Zotero subcollections
 
 - Crop and animal production, hunting and related service activities
 - Forestry and logging
@@ -310,8 +276,6 @@ Zotero tag `sub_*`, or Zotero subcollections
 - Undifferentiated goods- and services-producing activities of private households for own use
 
 ### Policy area
-
-Zotero tag na
  
 - Jobs
 - Social Rights
@@ -411,8 +375,6 @@ No example. What is it?
 
 ### Natural resources impacted
 
-Zotero na
-
 - Freshwater
 - Marine Resources
 - Wetlands
@@ -425,8 +387,6 @@ Zotero na
 - Biomass
 
 ### Wellbeing (type and impact)
-
-Zotero na
 
 Housing
 Jobs
@@ -442,8 +402,6 @@ Safety
 
 ### Justice
 
-Zotero na
-
 - Distributional
 - Procedural
 - Corrective
@@ -451,8 +409,6 @@ Zotero na
 - Transitional
 
 ### Planetary boundaries impacted
-
-Zotero na
 
 - Land-System Change
 - Climate Change

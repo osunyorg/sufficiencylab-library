@@ -1,7 +1,13 @@
 theme: sufficiency-hugo-theme
 enableRobotsTXT: true
 removePathAccents: true
+pagination:
+  pagerSize: 30
 params:
+  plausible: library.thesufficiencylab.org
+  google: 
+    spreadsheet: "11Tgp-8moupvHaIEXshK72eDK7i4k9pvwvQso6vdze08"
+    sheet: "data"
   summary:
     position: hero
   search:
@@ -14,4 +20,8 @@ languages:
       natural-resource-impacted: natural-resources-impacted
       planetary-boundary-impacted: planetary-boundaries-impacted
       scientific-discipline: scientific-disciplines
-      sub-sector: sub-sectors
+      sector: sectors
+security:
+  funcs:
+    getenv:
+      GOOGLE_API_KEY

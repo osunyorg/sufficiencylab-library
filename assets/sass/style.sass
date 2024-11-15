@@ -5,6 +5,9 @@
             margin-bottom: $spacing-3
             padding-bottom: $spacing-3
             position: relative
+            @include media-breakpoint-up(desktop)
+                display: flex
+                justify-content: space-between
             a
                 text-decoration: none
 .articles__page
@@ -12,6 +15,9 @@
         margin-top: $spacing-5
         margin-bottom: $spacing-3
     .sf
+        &__abstract
+            @include media-breakpoint-up(desktop)
+                width: columns(8)
         &__label
             @include small
             color: $color-text-alt
