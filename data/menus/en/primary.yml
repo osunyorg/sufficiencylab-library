@@ -21,16 +21,16 @@ items:
     target: "/publications-by-human-needs/healthcare/"
     kind: page
     children: []
+  - title: Mobility
+    target: "/publications-by-human-needs/mobility/"
+    kind: page
+    children: []
   - title: Nutrition
     target: "/publications-by-human-needs/nutrition/"
     kind: page
     children: []
   - title: Shelter and living conditions
     target: "/publications-by-human-needs/shelter/"
-    kind: page
-    children: []
-  - title: Mobility
-    target: "/publications-by-human-needs/mobility/"
     kind: page
     children: []
 - title: All scientific publications
