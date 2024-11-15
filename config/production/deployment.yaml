@@ -1,3 +1,4 @@
+# On reconstitue le déploiement pour surcharger la config de prod générée par l'admin
 matchers:
   - pattern: "^.+\\.(woff2|woff|svg|ttf|otf|eot|js|css)$"
     cacheControl: "max-age=31536000, no-transform, public"
