@@ -13,10 +13,6 @@ items:
     target: "/publications-by-human-needs/healthcare/"
     kind: page
     children: []
-  - title: Hygiene
-    target: "/publications-by-human-needs/hygiene/"
-    kind: page
-    children: []
   - title: Clothing
     target: "/publications-by-human-needs/community/"
     kind: page
