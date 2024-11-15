@@ -2,8 +2,8 @@
 title: Main menu
 items:
 - title: Publications by human needs
-  target: "/publications-by-human-needs/"
-  kind: page
+  target: https://library.thesufficiencylab.org/human-needs/
+  kind: url
   children:
   - title: Nutrition
     target: "/publications-by-human-needs/nutrition/"
