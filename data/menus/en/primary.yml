@@ -9,12 +9,12 @@ items:
     target: "/publications-by-human-needs/communication-and-information/"
     kind: page
     children: []
-  - title: Healthcare
-    target: "/publications-by-human-needs/healthcare/"
-    kind: page
-    children: []
   - title: Clothing
     target: "/publications-by-human-needs/community/"
+    kind: page
+    children: []
+  - title: Healthcare
+    target: "/publications-by-human-needs/healthcare/"
     kind: page
     children: []
   - title: Education
