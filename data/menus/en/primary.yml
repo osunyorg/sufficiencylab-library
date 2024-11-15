@@ -9,7 +9,7 @@ items:
     target: "/publications-by-human-needs/communication-and-information/"
     kind: page
     children: []
-  - title: Clothing
+  - title: Community
     target: "/publications-by-human-needs/community/"
     kind: page
     children: []
