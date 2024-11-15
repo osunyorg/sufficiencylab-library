@@ -10,7 +10,7 @@ items:
     kind: page
     children: []
   - title: Shelter and living conditions
-    target: "/publications-by-human-needs/building/"
+    target: "/publications-by-human-needs/shelter/"
     kind: page
     children: []
   - title: Hygiene
