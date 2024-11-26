@@ -9,4 +9,5 @@ items:
   target: "/sitemap/"
   kind: page
   children: []
+  file: content/en/pages/sitemap/_index.html
 
