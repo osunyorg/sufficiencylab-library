@@ -9,5 +9,6 @@ items:
   target: "/"
   kind: page
   children: []
+  path: "/"
   file: content/en/_index.html
 

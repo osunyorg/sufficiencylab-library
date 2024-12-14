@@ -9,37 +9,45 @@ items:
     target: "/publications-by-human-needs/communication-and-information/"
     kind: page
     children: []
+    path: "/pages/publications-by-human-needs/communication-and-information"
     file: content/en/pages/publications-by-human-needs/communication-and-information/_index.html
   - title: Community
     target: "/publications-by-human-needs/community/"
     kind: page
     children: []
+    path: "/pages/publications-by-human-needs/community"
     file: content/en/pages/publications-by-human-needs/community/_index.html
   - title: Education
     target: "/publications-by-human-needs/education/"
     kind: page
     children: []
+    path: "/pages/publications-by-human-needs/education"
     file: content/en/pages/publications-by-human-needs/education/_index.html
   - title: Healthcare
     target: "/publications-by-human-needs/healthcare/"
     kind: page
     children: []
+    path: "/pages/publications-by-human-needs/healthcare"
     file: content/en/pages/publications-by-human-needs/healthcare/_index.html
   - title: Mobility
     target: "/publications-by-human-needs/mobility/"
     kind: page
     children: []
+    path: "/pages/publications-by-human-needs/mobility"
     file: content/en/pages/publications-by-human-needs/mobility/_index.html
   - title: Nutrition
     target: "/publications-by-human-needs/nutrition/"
     kind: page
     children: []
+    path: "/pages/publications-by-human-needs/nutrition"
     file: content/en/pages/publications-by-human-needs/nutrition/_index.html
   - title: Shelter and living conditions
     target: "/publications-by-human-needs/shelter/"
     kind: page
     children: []
+    path: "/pages/publications-by-human-needs/shelter"
     file: content/en/pages/publications-by-human-needs/shelter/_index.html
+  path: "/pages/publications-by-human-needs"
   file: content/en/pages/publications-by-human-needs/_index.html
 - title: All scientific publications
   target: "/articles"
@@ -49,5 +57,6 @@ items:
   target: "/framework/"
   kind: page
   children: []
+  path: "/pages/framework"
   file: content/en/pages/framework/_index.html
 
