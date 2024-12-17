@@ -4,10 +4,12 @@ items:
 - title: Lab
   target: https://www.thesufficiencylab.org
   kind: url
+  new_tab: false
   children: []
 - title: Library
   target: "/"
   kind: page
+  new_tab: false
   children: []
   path: "/"
   file: content/en/_index.html
