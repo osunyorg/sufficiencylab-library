@@ -50,9 +50,4 @@ items:
   children: []
   path: "/pages/publications-by-human-needs/shelter"
   file: content/en/pages/publications-by-human-needs/shelter/_index.html
-- title: All scientific publications
-  target: "/articles"
-  kind: url
-  new_tab: false
-  children: []
 
