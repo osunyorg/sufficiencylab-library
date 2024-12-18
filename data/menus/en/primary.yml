@@ -64,11 +64,6 @@ items:
   children: []
   path: "/pages/publications-by-human-needs/communication-and-information"
   file: content/en/pages/publications-by-human-needs/communication-and-information/_index.html
-- title: All scientific publications
-  target: "/articles"
-  kind: url
-  new_tab: false
-  children: []
 - title: Community
   target: "/publications-by-human-needs/community/"
   kind: page
@@ -76,4 +71,9 @@ items:
   children: []
   path: "/pages/publications-by-human-needs/community"
   file: content/en/pages/publications-by-human-needs/community/_index.html
+- title: All scientific publications
+  target: "/articles"
+  kind: url
+  new_tab: false
+  children: []
 
