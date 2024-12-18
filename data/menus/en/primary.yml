@@ -92,11 +92,6 @@ items:
   children: []
   path: "/pages/publications-by-human-needs/mobility"
   file: content/en/pages/publications-by-human-needs/mobility/_index.html
-- title: All scientific publications
-  target: "/articles"
-  kind: url
-  new_tab: false
-  children: []
 - title: Nutrition
   target: "/publications-by-human-needs/nutrition/"
   kind: page
@@ -104,4 +99,9 @@ items:
   children: []
   path: "/pages/publications-by-human-needs/nutrition"
   file: content/en/pages/publications-by-human-needs/nutrition/_index.html
+- title: All scientific publications
+  target: "/articles"
+  kind: url
+  new_tab: false
+  children: []
 
