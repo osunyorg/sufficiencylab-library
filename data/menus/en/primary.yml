@@ -90,4 +90,11 @@ items:
   kind: url
   new_tab: false
   children: []
+- title: Healthcare
+  target: "/publications-by-human-needs/healthcare/"
+  kind: page
+  new_tab: false
+  children: []
+  path: "/pages/publications-by-human-needs/healthcare"
+  file: content/en/pages/publications-by-human-needs/healthcare/_index.html
 
