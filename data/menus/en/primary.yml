@@ -99,11 +99,6 @@ items:
   children: []
   path: "/pages/publications-by-human-needs/nutrition"
   file: content/en/pages/publications-by-human-needs/nutrition/_index.html
-- title: All scientific publications
-  target: "/articles"
-  kind: url
-  new_tab: false
-  children: []
 - title: Shelter and living conditions
   target: "/publications-by-human-needs/shelter/"
   kind: page
@@ -111,4 +106,9 @@ items:
   children: []
   path: "/pages/publications-by-human-needs/shelter"
   file: content/en/pages/publications-by-human-needs/shelter/_index.html
+- title: All scientific publications
+  target: "/articles"
+  kind: url
+  new_tab: false
+  children: []
 
