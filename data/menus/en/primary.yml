@@ -104,4 +104,11 @@ items:
   kind: url
   new_tab: false
   children: []
+- title: Shelter and living conditions
+  target: "/publications-by-human-needs/shelter/"
+  kind: page
+  new_tab: false
+  children: []
+  path: "/pages/publications-by-human-needs/shelter"
+  file: content/en/pages/publications-by-human-needs/shelter/_index.html
 
