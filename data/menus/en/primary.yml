@@ -76,4 +76,11 @@ items:
   kind: url
   new_tab: false
   children: []
+- title: Education
+  target: "/publications-by-human-needs/education/"
+  kind: page
+  new_tab: false
+  children: []
+  path: "/pages/publications-by-human-needs/education"
+  file: content/en/pages/publications-by-human-needs/education/_index.html
 
