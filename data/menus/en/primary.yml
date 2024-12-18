@@ -62,4 +62,11 @@ items:
   kind: url
   new_tab: false
   children: []
+- title: Communication and information
+  target: "/publications-by-human-needs/communication-and-information/"
+  kind: page
+  new_tab: false
+  children: []
+  path: "/pages/publications-by-human-needs/communication-and-information"
+  file: content/en/pages/publications-by-human-needs/communication-and-information/_index.html
 
