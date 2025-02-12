@@ -2,6 +2,11 @@
 
 baseURL: https://library.thesufficiencylab.org
 
+## OSUNY
+osuny:
+  website:
+    id: 36abb336-5f5a-4138-a5f8-4c66a0c1b22b
+
 ## LANGUAGE
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
