@@ -10,11 +10,6 @@ en:
   params:
     contact_details:
 
-  permalinks:
-    events: /agenda/:year/:slug/
-    exhibitions: /exhibitions/:year-:month-:day-:slug/
-    events_categories: /agenda/:slug/
-    pages_categories: /:slug/
   taxonomies:
     administrator: administrators
     author: authors
