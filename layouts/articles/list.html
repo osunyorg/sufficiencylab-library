@@ -8,7 +8,12 @@
         "context" .
       ) }}
   
-    {{ partial "contents/list.html" . }}
+    {{ if .Params.contents }}
+      {{ partial "contents/list.html" (dict
+          "context" .
+          "contents" .Params.contents
+        ) }}
+    {{ end }}
   
     <div class="container">
       {{ partial "articles/articles.html" . }}
