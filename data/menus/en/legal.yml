@@ -2,22 +2,28 @@
 title: Legal
 items:
 - title: Legal terms
+  slug: legal-terms
   target: https://www.thesufficiencylab.org/legal-terms/
   kind: url
   new_tab: true
   children: []
+  descendants_targets: []
 - title: Sitemap
+  slug: sitemap
   target: "/sitemap/"
   kind: page
   new_tab: false
   children: []
+  descendants_targets: []
   path: "/pages/sitemap"
   file: content/en/pages/sitemap/_index.html
 - title: About our framework
+  slug: about-our-framework
   target: "/framework/"
   kind: page
   new_tab: false
   children: []
+  descendants_targets: []
   path: "/pages/framework"
   file: content/en/pages/framework/_index.html
 
