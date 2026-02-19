@@ -1,4 +1,4 @@
-name: deuxfleurs
+name: deuxfleurs-custom
 
 on:
   push:
