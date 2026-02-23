@@ -7,6 +7,11 @@ osuny:
   website:
     id: 36abb336-5f5a-4138-a5f8-4c66a0c1b22b
 
+## PARAMS
+params:
+  _merge: deep
+  plausible: "library.thesufficiencylab.org"
+
 ## LANGUAGE
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
