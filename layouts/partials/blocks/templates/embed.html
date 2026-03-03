@@ -13,7 +13,7 @@
           {{ if hasPrefix .code "sufficiency-framework" }}
             {{ partial "articles/embed.html" .code }}
           {{ else }}
-            {{ partial "PrepareHTML" .code }}
+            {{ safeHTML .code }}
           {{ end -}}
         {{ end -}}
 
