@@ -32,6 +32,7 @@ jobs:
       with:
         hugo-version: '0.159.2'
         extended: true
+        withdeploy: true
 
     - name: Compilation du site # With GOOGLE_API_KEY
       run: yarn osuny build
