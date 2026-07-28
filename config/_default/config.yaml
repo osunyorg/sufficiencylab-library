@@ -25,6 +25,9 @@ languages:
       scientific-discipline: scientific-disciplines
       sector: sectors
 security:
+  allowContent:
+    - html
+    - "text/markdown"
   funcs:
     getenv:
       - GOOGLE_API_KEY
