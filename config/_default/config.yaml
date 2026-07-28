@@ -1,3 +1,4 @@
+_merge: deep
 theme: sufficiency-hugo-theme
 enableRobotsTXT: true
 removePathAccents: true
